@@ -1,0 +1,28 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1 class="mt-2">Gestion des taches</h1>
+      <hr class="mt-0 mb-4">
+      {% block content %}
+      <div class="card">
+          <div class="card-header">
+              <h3>Inscription</h3>
+          </div>
+          <div class="card-body">
+              <form method="post">
+                  {% csrf_token %}
+                  {% bootstrap_form form  %}
+                  {% buttons %}
+                    <button class="btn btn-primary" type="submit">Creer un compte</button>
+                  {% endbuttons %}
+                 
+              </form>
+          </div>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <hr class="mt-0 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>Créer une tache</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                      <button type="submit" class="btn btn-success">Enregister</button>
+                      <a href="/acceuil" class="btn btn-warning">Annuler</a>
+                    {% endbuttons %}
+                  </form>  
+            </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
